@@ -6,44 +6,28 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Company name</dt>
-      <!-- Display company_name start -->
       <dd><%= coffee_chat.company_name %></dd>
-      <!-- Display company_name end -->
 
       <dt>Consultant name</dt>
-      <!-- Display consultant_name start -->
       <dd><%= coffee_chat.consultant_name %></dd>
-      <!-- Display consultant_name end -->
 
       <dt>Office</dt>
-      <!-- Display office start -->
       <dd><%= coffee_chat.office %></dd>
-      <!-- Display office end -->
 
       <dt>Title</dt>
-      <!-- Display title start -->
       <dd><%= coffee_chat.title %></dd>
-      <!-- Display title end -->
 
       <dt>Date</dt>
-      <!-- Display date start -->
       <dd><%= coffee_chat.date %></dd>
-      <!-- Display date end -->
 
       <dt>Time</dt>
-      <!-- Display time start -->
       <dd><%= coffee_chat.time %></dd>
-      <!-- Display time end -->
 
       <dt>Purpose</dt>
-      <!-- Display purpose start -->
       <dd><%= coffee_chat.purpose %></dd>
-      <!-- Display purpose end -->
 
       <dt>Location</dt>
-      <!-- Display location start -->
       <dd><%= coffee_chat.location %></dd>
-      <!-- Display location end -->
 
     </dl>
 
@@ -52,21 +36,17 @@
         <%= link_to_show_or_back coffee_chat, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link coffee_chat start -->
       <div class="col">
         <%= link_to edit_coffee_chat_url(coffee_chat), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link coffee_chat end -->
 
-      <!-- Delete link coffee_chat start -->
       <div class="col">
         <%= link_to coffee_chat, method: :delete, data: { confirm: "Do you really want to delete this coffee_chat?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link coffee_chat end -->
     </div>
   </div>
 

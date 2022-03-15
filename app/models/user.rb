@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-  
   include JwtToken
-# Direct associations
+  # Direct associations
 
   # Indirect associations
 

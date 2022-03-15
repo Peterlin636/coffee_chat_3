@@ -10,5 +10,4 @@ class CoffeeChat < ApplicationRecord
   def to_s
     company_name
   end
-
 end

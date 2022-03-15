@@ -14,5 +14,4 @@ class CoffeeChatResource < ApplicationResource
   # Direct associations
 
   # Indirect associations
-
 end

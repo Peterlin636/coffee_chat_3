@@ -1,15 +1,14 @@
 class CoffeeChatsController < ApplicationController
-  before_action :set_coffee_chat, only: [:show, :edit, :update, :destroy]
+  before_action :set_coffee_chat, only: %i[show edit update destroy]
 
   # GET /coffee_chats
   def index
     @q = CoffeeChat.ransack(params[:q])
-    @coffee_chats = @q.result(:distinct => true).page(params[:page]).per(10)
+    @coffee_chats = @q.result(distinct: true).page(params[:page]).per(10)
   end
 
   # GET /coffee_chats/1
-  def show
-  end
+  def show; end
 
   # GET /coffee_chats/new
   def new
@@ -17,15 +16,14 @@ class CoffeeChatsController < ApplicationController
   end
 
   # GET /coffee_chats/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /coffee_chats
   def create
     @coffee_chat = CoffeeChat.new(coffee_chat_params)
 
     if @coffee_chat.save
-      redirect_to @coffee_chat, notice: 'Coffee chat was successfully created.'
+      redirect_to @coffee_chat, notice: "Coffee chat was successfully created."
     else
       render :new
     end
@@ -34,7 +32,7 @@ class CoffeeChatsController < ApplicationController
   # PATCH/PUT /coffee_chats/1
   def update
     if @coffee_chat.update(coffee_chat_params)
-      redirect_to @coffee_chat, notice: 'Coffee chat was successfully updated.'
+      redirect_to @coffee_chat, notice: "Coffee chat was successfully updated."
     else
       render :edit
     end
@@ -43,17 +41,20 @@ class CoffeeChatsController < ApplicationController
   # DELETE /coffee_chats/1
   def destroy
     @coffee_chat.destroy
-    redirect_to coffee_chats_url, notice: 'Coffee chat was successfully destroyed.'
+    redirect_to coffee_chats_url,
+                notice: "Coffee chat was successfully destroyed."
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_coffee_chat
-      @coffee_chat = CoffeeChat.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def coffee_chat_params
-      params.require(:coffee_chat).permit(:company_name, :consultant_name, :office, :title, :date, :time, :purpose, :location)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_coffee_chat
+    @coffee_chat = CoffeeChat.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def coffee_chat_params
+    params.require(:coffee_chat).permit(:company_name, :consultant_name,
+                                        :office, :title, :date, :time, :purpose, :location)
+  end
 end

@@ -1,0 +1,213 @@
+<% was_validated = coffee_chat.errors.any? %>
+
+<%= form_with(model: coffee_chat, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for company_name start -->
+  <div class="form-group">
+    <% company_name_class = "form-control" %>
+    <% company_name_was_invalid = coffee_chat.errors.include?(:company_name) %>
+
+    <% if was_validated %>
+      <% if company_name_was_invalid %>
+        <% company_name_class << " is-invalid" %>
+      <% else %>
+        <% company_name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :company_name %>
+    <!-- Input for company_name start -->
+    <%= f.text_field :company_name, class: company_name_class, placeholder: "Enter company name" %>
+    <!-- Input for company_name end -->
+    <% if company_name_was_invalid %>
+      <% coffee_chat.errors.full_messages_for(:company_name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for company_name end -->
+  <!-- Label and input for consultant_name start -->
+  <div class="form-group">
+    <% consultant_name_class = "form-control" %>
+    <% consultant_name_was_invalid = coffee_chat.errors.include?(:consultant_name) %>
+
+    <% if was_validated %>
+      <% if consultant_name_was_invalid %>
+        <% consultant_name_class << " is-invalid" %>
+      <% else %>
+        <% consultant_name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :consultant_name %>
+    <!-- Input for consultant_name start -->
+    <%= f.text_field :consultant_name, class: consultant_name_class, placeholder: "Enter consultant name" %>
+    <!-- Input for consultant_name end -->
+    <% if consultant_name_was_invalid %>
+      <% coffee_chat.errors.full_messages_for(:consultant_name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for consultant_name end -->
+  <!-- Label and input for office start -->
+  <div class="form-group">
+    <% office_class = "form-control" %>
+    <% office_was_invalid = coffee_chat.errors.include?(:office) %>
+
+    <% if was_validated %>
+      <% if office_was_invalid %>
+        <% office_class << " is-invalid" %>
+      <% else %>
+        <% office_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :office %>
+    <!-- Input for office start -->
+    <%= f.text_field :office, class: office_class, placeholder: "Enter office" %>
+    <!-- Input for office end -->
+    <% if office_was_invalid %>
+      <% coffee_chat.errors.full_messages_for(:office).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for office end -->
+  <!-- Label and input for title start -->
+  <div class="form-group">
+    <% title_class = "form-control" %>
+    <% title_was_invalid = coffee_chat.errors.include?(:title) %>
+
+    <% if was_validated %>
+      <% if title_was_invalid %>
+        <% title_class << " is-invalid" %>
+      <% else %>
+        <% title_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :title %>
+    <!-- Input for title start -->
+    <%= f.text_field :title, class: title_class, placeholder: "Enter title" %>
+    <!-- Input for title end -->
+    <% if title_was_invalid %>
+      <% coffee_chat.errors.full_messages_for(:title).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for title end -->
+  <!-- Label and input for date start -->
+  <div class="form-group">
+    <% date_class = "form-control" %>
+    <% date_was_invalid = coffee_chat.errors.include?(:date) %>
+
+    <% if was_validated %>
+      <% if date_was_invalid %>
+        <% date_class << " is-invalid" %>
+      <% else %>
+        <% date_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :date %>
+    <!-- Input for date start -->
+    <%= f.date_select :date, class: date_class, placeholder: "Enter date" %>
+    <!-- Input for date end -->
+    <% if date_was_invalid %>
+      <% coffee_chat.errors.full_messages_for(:date).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for date end -->
+  <!-- Label and input for time start -->
+  <div class="form-group">
+    <% time_class = "form-control" %>
+    <% time_was_invalid = coffee_chat.errors.include?(:time) %>
+
+    <% if was_validated %>
+      <% if time_was_invalid %>
+        <% time_class << " is-invalid" %>
+      <% else %>
+        <% time_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :time %>
+    <!-- Input for time start -->
+    <%= f.time_select :time, class: time_class, placeholder: "Enter time" %>
+    <!-- Input for time end -->
+    <% if time_was_invalid %>
+      <% coffee_chat.errors.full_messages_for(:time).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for time end -->
+  <!-- Label and input for purpose start -->
+  <div class="form-group">
+    <% purpose_class = "form-control" %>
+    <% purpose_was_invalid = coffee_chat.errors.include?(:purpose) %>
+
+    <% if was_validated %>
+      <% if purpose_was_invalid %>
+        <% purpose_class << " is-invalid" %>
+      <% else %>
+        <% purpose_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :purpose %>
+    <!-- Input for purpose start -->
+    <%= f.text_field :purpose, class: purpose_class, placeholder: "Enter purpose" %>
+    <!-- Input for purpose end -->
+    <% if purpose_was_invalid %>
+      <% coffee_chat.errors.full_messages_for(:purpose).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for purpose end -->
+  <!-- Label and input for location start -->
+  <div class="form-group">
+    <% location_class = "form-control" %>
+    <% location_was_invalid = coffee_chat.errors.include?(:location) %>
+
+    <% if was_validated %>
+      <% if location_was_invalid %>
+        <% location_class << " is-invalid" %>
+      <% else %>
+        <% location_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :location %>
+    <!-- Input for location start -->
+    <%= f.text_field :location, class: location_class, placeholder: "Enter location" %>
+    <!-- Input for location end -->
+    <% if location_was_invalid %>
+      <% coffee_chat.errors.full_messages_for(:location).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for location end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
